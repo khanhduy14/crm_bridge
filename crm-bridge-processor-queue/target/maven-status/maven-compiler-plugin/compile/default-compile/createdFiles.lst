@@ -1,0 +1,2 @@
+com/topica/crm/bridge/processor/queue/PushObjectToRabbitmqProcessor.class
+com/topica/crm/bridge/processor/queue/PushContactToRabbitmqProcessor.class

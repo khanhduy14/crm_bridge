@@ -1,0 +1,10 @@
+com/topica/crm/bridge/core/processor/BaseProcessor.class
+com/topica/crm/bridge/core/chain/ProcessorChainListImpl.class
+com/topica/crm/bridge/core/entity/hubspot/HubspotProperty.class
+com/topica/crm/bridge/core/entity/hubspot/HubspotVersions.class
+com/topica/crm/bridge/core/processor/PrintToConsoleProcessor.class
+com/topica/crm/bridge/core/entity/hubspot/HubspotContact.class
+com/topica/crm/bridge/core/chain/ProcessorChain.class
+com/topica/crm/bridge/core/entity/hubspot/HubspotDeal.class
+com/topica/crm/bridge/core/entity/BaseObject.class
+com/topica/crm/bridge/core/entity/odoo/OdooContact.class

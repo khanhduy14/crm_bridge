@@ -1,0 +1,8 @@
+com/topica/crm/bridge/odoo/schedule/OdooSchedule.class
+com/topica/crm/bridge/odoo/service/OdooService.class
+com/topica/crm/bridge/odoo/service/OdooService$1$1.class
+com/topica/crm/bridge/odoo/service/OdooService$1.class
+com/topica/crm/bridge/odoo/entity/OdooContact.class
+com/topica/crm/bridge/odoo/service/OdooService$2.class
+com/topica/crm/bridge/odoo/processor/ConvertOdooContactToContactProcessor.class
+com/topica/crm/bridge/odoo/controller/OdooWebhook.class
