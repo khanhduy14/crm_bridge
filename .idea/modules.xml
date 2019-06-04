@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-api/crm-bridge-api.iml" filepath="$PROJECT_DIR$/crm-bridge-api/crm-bridge-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-core/crm-bridge-core.iml" filepath="$PROJECT_DIR$/crm-bridge-core/crm-bridge-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-processor-api/crm-bridge-processor-api.iml" filepath="$PROJECT_DIR$/crm-bridge-processor-api/crm-bridge-processor-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-processor-es/crm-bridge-processor-es.iml" filepath="$PROJECT_DIR$/crm-bridge-processor-es/crm-bridge-processor-es.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-processor-queue/crm-bridge-processor-queue.iml" filepath="$PROJECT_DIR$/crm-bridge-processor-queue/crm-bridge-processor-queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-processor-sql/crm-bridge-processor-sql.iml" filepath="$PROJECT_DIR$/crm-bridge-processor-sql/crm-bridge-processor-sql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-service-agilecrm/crm-bridge-service-agilecrm.iml" filepath="$PROJECT_DIR$/crm-bridge-service-agilecrm/crm-bridge-service-agilecrm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-service-hubspot/crm-bridge-service-hubspot.iml" filepath="$PROJECT_DIR$/crm-bridge-service-hubspot/crm-bridge-service-hubspot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-bridge-service-odoo/crm-bridge-service-odoo.iml" filepath="$PROJECT_DIR$/crm-bridge-service-odoo/crm-bridge-service-odoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-hubspot-direct/crm-hubspot-direct.iml" filepath="$PROJECT_DIR$/crm-hubspot-direct/crm-hubspot-direct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hubspot_api.iml" filepath="$PROJECT_DIR$/hubspot_api.iml" />
+    </modules>
+  </component>
+</project>

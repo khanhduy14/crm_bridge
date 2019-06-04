@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="crm-bridge-api" />
+        <module name="crm-bridge-core" />
+        <module name="crm-bridge-processor-api" />
+        <module name="crm-bridge-processor-es" />
+        <module name="crm-bridge-processor-queue" />
+        <module name="crm-bridge-processor-sql" />
+        <module name="crm-bridge-service-agilecrm" />
+        <module name="crm-bridge-service-hubspot" />
+        <module name="crm-bridge-service-odoo" />
+        <module name="crm-hubspot-direct" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="crm-bridge-api" target="8" />
+      <module name="crm-bridge-core" target="8" />
+      <module name="crm-bridge-processor-api" target="8" />
+      <module name="crm-bridge-processor-es" target="8" />
+      <module name="crm-bridge-processor-queue" target="8" />
+      <module name="crm-bridge-processor-sql" target="8" />
+      <module name="crm-bridge-service-agilecrm" target="8" />
+      <module name="crm-bridge-service-hubspot" target="8" />
+      <module name="crm-bridge-service-odoo" target="8" />
+      <module name="crm-hubspot-direct" target="8" />
+      <module name="hubspot_api" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="crm-bridge-api" options="-parameters" />
+      <module name="crm-bridge-core" options="-parameters" />
+      <module name="crm-bridge-processor-api" options="-parameters" />
+      <module name="crm-bridge-processor-es" options="-parameters" />
+      <module name="crm-bridge-processor-queue" options="-parameters" />
+      <module name="crm-bridge-processor-sql" options="-parameters" />
+      <module name="crm-bridge-service-agilecrm" options="-parameters" />
+      <module name="crm-bridge-service-hubspot" options="-parameters" />
+      <module name="crm-bridge-service-odoo" options="-parameters" />
+      <module name="crm-hubspot-direct" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-processor-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-processor-es" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-processor-queue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-processor-sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-service-agilecrm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-service-hubspot" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-bridge-service-odoo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crm-hubspot-direct" charset="UTF-8" />
+  </component>
+</project>

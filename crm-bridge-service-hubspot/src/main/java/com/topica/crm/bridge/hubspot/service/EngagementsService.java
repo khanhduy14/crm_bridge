@@ -1,45 +1,63 @@
 package com.topica.crm.bridge.hubspot.service;
 
-import com.topica.crm.bridge.hubspot.exception.HSExeption;
+import com.github.icovn.http.client.HttpMethod;
+import com.github.icovn.http.client.HttpResult;
+import com.github.icovn.util.ExceptionUtil;
+import com.github.icovn.util.MapperUtil;
+import com.topica.crm.bridge.hubspot.entity.engagement.HubspotEngagement;
+import com.topica.crm.bridge.hubspot.entity.engagement.HubspotEngagementList;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Slf4j
-public class EngagementsService {
-  @Autowired HttpService httpService;
+public class EngagementsService extends BaseService {
 
-  private String offset = "";
+  public List<HubspotEngagement> getEngagements(String objectType, String objectId) {
+    String uriTemplate =
+        "/engagements/v1/engagements/associated/"
+            + objectType
+            + "/"
+            + objectId
+            + "?hapikey={KEY}&vidOffset={OFFSET}&offset={OFFSET}&count=100";
+    List<HubspotEngagement> result = new ArrayList<>();
 
-  public JSONObject getAssociatedRequest(String objectType, String objectId) throws HSExeption {
-    String url = "/engagements/v1/engagements/associated/" + objectType + "/" + objectId;
-    return getAssociated(url);
-  }
+    long offset = 0;
+    boolean willQuery = true;
+    while (willQuery) {
+      HubspotEngagementList engagementList = null;
+      try {
+        String url =
+            uriTemplate.replace("{KEY}", apiKey).replace("{OFFSET}", Long.toString(offset));
+        HttpResult httpResult = httpClient.query(HttpMethod.GET, apiBase + url, false, headers);
 
-  private JSONObject getAssociated(String url) throws HSExeption {
-    JSONObject temp = new JSONObject();
-    try {
-      boolean willQuery = true;
-      while (willQuery) {
-        JSONObject jsonObject = (JSONObject) httpService.getRequest(url, offset);
-        JSONArray jsonArray = jsonObject.getJSONArray("results");
-        jsonArray.forEach(i -> temp.append("results", i));
-        if (jsonObject.get("hasMore").equals(true)) {
-          offset = jsonObject.get("offset").toString();
+        if (httpResult.getStatusCode() == 200) {
+          engagementList =
+              MapperUtil.getMapper().readValue(httpResult.getBody(), HubspotEngagementList.class);
+        } else {
+          log.error("(getEngagements)httpResult: {}", httpResult);
+        }
+      } catch (Exception ex) {
+        log.error(ExceptionUtil.getFullStackTrace(ex, true));
+        engagementList = null;
+      }
+
+      if (engagementList != null) {
+        result.addAll(engagementList.getResults());
+
+        if (engagementList.isHasMore()) {
+          offset = engagementList.getOffset();
         } else {
           willQuery = false;
         }
-      }
-      return temp;
-    } catch (HSExeption e) {
-      if (e.getMessage().equals("Not Found")) {
-        return null;
       } else {
-        throw e;
+        willQuery = false;
       }
     }
+
+    return result;
   }
 }

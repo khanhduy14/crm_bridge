@@ -1,3 +1,0 @@
-hubspot:
-  ApiKey: ab1da19b-a24b-460a-bd1e-d3713aac7821 #${HUBSPOT_API_KEY}
-  ApiBase: http://api.hubapi.com

@@ -1,7 +1,0 @@
-com/topica/crm/bridge/processor/sql/SaveDealToSqlProcessor.class
-com/topica/crm/bridge/processor/sql/repository/DealJsonStringRepository.class
-com/topica/crm/bridge/processor/sql/repository/ContactJsonStringRepository.class
-com/topica/crm/bridge/processor/sql/SaveContactToSqlProcessor.class
-com/topica/crm/bridge/processor/sql/entity/JsonContact.class
-com/topica/crm/bridge/processor/sql/entity/JsonDeal.class
-com/topica/crm/bridge/processor/sql/repository/ContactRepository.class

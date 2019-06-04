@@ -1,13 +1,14 @@
 package com.topica.crm.bridge.odoo.processor;
 
-import com.topica.crm.bridge.core.entity.odoo.OdooContact;
+import com.topica.crm.bridge.core.entity.BaseObject;
+import com.topica.crm.bridge.core.entity.Contact;
 import com.topica.crm.bridge.core.processor.BaseProcessor;
-import com.topica.crm.bridge.processor.sql.entity.Contact;
+import com.topica.crm.bridge.odoo.entity.contact.OdooContact;
 
 public class ConvertOdooContactToContactProcessor implements BaseProcessor {
 
   @Override
-  public Object process(Object input) {
+  public BaseObject process(BaseObject input) {
     if (input instanceof OdooContact && input != null) {
       OdooContact odooContact = (OdooContact) input;
       Contact contact = new Contact();
@@ -16,7 +17,6 @@ public class ConvertOdooContactToContactProcessor implements BaseProcessor {
       contact.setPhone(odooContact.getPhone());
       contact.setFullName(odooContact.getName());
       contact.setEmail(odooContact.getEmail());
-      contact.setAddress(odooContact.getStreet());
       return contact;
     }
 

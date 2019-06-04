@@ -4,22 +4,17 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.4.RELEASE</version>
+  </parent>
+
   <groupId>com.topica.edu.vn</groupId>
-  <artifactId>hubspot_api</artifactId>
+  <artifactId>crm-bridge</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>8</source>
-          <target>8</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+
   <modules>
     <module>crm-bridge-api</module>
     <module>crm-bridge-core</module>
@@ -31,31 +26,25 @@
     <module>crm-bridge-service-hubspot</module>
     <module>crm-bridge-service-odoo</module>
     <module>crm-hubspot-direct</module>
+      <module>test</module>
+      <module>crm-bridge-transport</module>
   </modules>
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.1.4.RELEASE</version>
-  </parent>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
-
-
-    <!--<dependency>-->
-      <!--<groupId>org.json</groupId>-->
-      <!--<artifactId>json</artifactId>-->
-      <!--<version>20180813</version>-->
-    <!--</dependency>-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
     </dependency>
-
-
-
   </dependencies>
 
+  <properties>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <elasticsearch.version>6.7.2</elasticsearch.version>
+  </properties>
 </project>

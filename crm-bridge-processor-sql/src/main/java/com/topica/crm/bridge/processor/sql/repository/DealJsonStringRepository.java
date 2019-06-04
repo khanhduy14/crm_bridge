@@ -4,6 +4,6 @@ import com.topica.crm.bridge.processor.sql.entity.JsonDeal;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DealJsonStringRepository extends JpaRepository<JsonDeal, String> {
+public interface DealJsonStringRepository extends JpaRepository<JsonDeal, Long> {
   Optional<JsonDeal> findById(String dealId);
 }

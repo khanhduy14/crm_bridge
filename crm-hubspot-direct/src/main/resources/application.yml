@@ -1,0 +1,7 @@
+# RABBITMQ -----------------------------------------------------------------------------------------
+# worker
+rabbitmq:
+  message.ttl: 500
+  concurrent.consumers: 1
+  max.concurrent.consumers: 1
+  prefetch: 0

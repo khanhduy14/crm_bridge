@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 public class PrintToConsoleProcessor implements BaseProcessor {
 
   @Override
-  public Object process(Object input) {
+  public BaseObject process(BaseObject input) {
     log.info("(process)input: {}", input);
     return input;
   }

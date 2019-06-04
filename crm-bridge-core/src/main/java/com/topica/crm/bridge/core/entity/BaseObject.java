@@ -5,7 +5,15 @@ import lombok.Data;
 @Data
 public class BaseObject {
 
-  private String id;
+  protected String id;
 
-  private String data;
+  protected String data;
+
+  protected Long lastUpdatedAt;
+
+  public static BaseObject of(String data) {
+    BaseObject baseObject = new BaseObject();
+    baseObject.setData(data);
+    return baseObject;
+  }
 }

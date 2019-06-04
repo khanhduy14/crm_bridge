@@ -1,12 +1,13 @@
 package com.topica.crm.bridge.hubspot.schedule;
 
+import com.github.icovn.util.ExceptionUtil;
 import com.topica.crm.bridge.core.chain.ProcessorChain;
-import com.topica.crm.bridge.hubspot.exception.HSExeption;
+import com.topica.crm.bridge.hubspot.entity.contact.HubspotContact;
 import com.topica.crm.bridge.hubspot.service.ContactService;
-import com.topica.crm.bridge.hubspot.service.DealService;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,33 +19,31 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class HubspotSchedule {
 
+  @Value("${application.hubspot.enable.schedule:false}")
+  private boolean enableSchedule;
+
   @Autowired private ContactService contactService;
 
-  @Autowired private DealService dealService;
-
-  @Autowired private ProcessorChain processorChain;
+  @Qualifier("scheduleChain")
+  private ProcessorChain processorChain;
 
   public void hubspotAutoScan() {
-    ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
-    executorService.scheduleAtFixedRate(
-        () -> {
-          try {
-            List<JSONObject> contactList = contactService.getAllJSON();
-            List<JSONObject> dealList = dealService.getAll();
-            contactList.forEach(
-                hubspotContact -> {
-                  processorChain.process(hubspotContact);
-                });
-            dealList.forEach(
-                hubspotDeal -> {
-                  processorChain.process(hubspotDeal);
-                });
-          } catch (HSExeption hsExeption) {
-            log.info(hsExeption.getRawMessage());
-          }
-        },
-        0,
-        10,
-        TimeUnit.SECONDS);
+    if (enableSchedule) {
+      ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
+      executorService.scheduleAtFixedRate(
+          () -> {
+            try {
+              List<HubspotContact> contactList = contactService.getContacts();
+              for (HubspotContact contact : contactList) {
+                processorChain.process(contact);
+              }
+            } catch (Exception ex) {
+              log.error(ExceptionUtil.getFullStackTrace(ex, true));
+            }
+          },
+          0,
+          10,
+          TimeUnit.SECONDS);
+    }
   }
 }

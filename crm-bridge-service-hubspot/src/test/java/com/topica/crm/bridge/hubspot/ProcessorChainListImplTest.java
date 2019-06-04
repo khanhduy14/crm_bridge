@@ -1,6 +1,7 @@
 package com.topica.crm.bridge.hubspot;
 
 import com.topica.crm.bridge.core.chain.ProcessorChainListImpl;
+import com.topica.crm.bridge.core.entity.BaseObject;
 import com.topica.crm.bridge.core.processor.PrintToConsoleProcessor;
 import com.topica.crm.bridge.hubspot.processor.ConvertHubspotContactToContactProcessor;
 import com.topica.crm.bridge.hubspot.processor.ConvertStringToHubspotContactProcessor;
@@ -1111,11 +1112,11 @@ public class ProcessorChainListImplTest {
     chainList.add(convertStringToHubspotContactProcessor);
     chainList.add(convertHubspotContactToContactProcessor);
     chainList.add(printToConsoleProcessor);
-    chainList.process(json);
+    chainList.process(BaseObject.of(json));
 
     ProcessorChainListImpl chainListSimple = new ProcessorChainListImpl();
     chainListSimple.add(convertStringToHubspotContactProcessor);
     chainListSimple.add(printToConsoleProcessor);
-    chainListSimple.process(json);
+    chainListSimple.process(BaseObject.of(json));
   }
 }

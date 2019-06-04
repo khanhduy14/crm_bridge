@@ -1,13 +1,14 @@
 package com.topica.crm.bridge.hubspot.processor;
 
-import com.topica.crm.bridge.core.entity.hubspot.HubspotContact;
+import com.topica.crm.bridge.core.entity.BaseObject;
+import com.topica.crm.bridge.core.entity.Contact;
 import com.topica.crm.bridge.core.processor.BaseProcessor;
-import com.topica.crm.bridge.processor.sql.entity.Contact;
+import com.topica.crm.bridge.hubspot.entity.contact.HubspotContact;
 
 public class ConvertHubspotContactToContactProcessor implements BaseProcessor {
 
   @Override
-  public Contact process(Object input) {
+  public BaseObject process(BaseObject input) {
     if (input instanceof HubspotContact && input != null) {
       HubspotContact hubspotContact = (HubspotContact) input;
       Contact contact = new Contact();
