@@ -84,14 +84,7 @@ public class OdooBaseService {
               (Object[])
                   models.execute(
                       "execute_kw",
-                      asList(
-                          db,
-                          uid,
-                          password,
-                          modelType,
-                          mode,
-                          list,
-                          Collections.emptyList())));
+                      asList(db, uid, password, modelType, mode, list, Collections.emptyList())));
 
       return objects;
     } catch (XmlRpcException e) {

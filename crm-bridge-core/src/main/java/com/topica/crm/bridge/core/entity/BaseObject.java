@@ -2,8 +2,10 @@ package com.topica.crm.bridge.core.entity;
 
 import lombok.Data;
 
+import java.util.HashMap;
+
 @Data
-public class BaseObject {
+public class BaseObject extends HashMap {
 
   protected String id;
 

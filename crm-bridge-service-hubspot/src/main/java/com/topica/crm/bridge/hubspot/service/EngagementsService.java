@@ -16,7 +16,7 @@ import java.util.List;
 @Slf4j
 public class EngagementsService extends BaseService {
 
-  public List<HubspotEngagement> getEngagements(String objectType, String objectId) {
+  List<HubspotEngagement> getEngagements(String objectType, String objectId) {
     String uriTemplate =
         "/engagements/v1/engagements/associated/"
             + objectType

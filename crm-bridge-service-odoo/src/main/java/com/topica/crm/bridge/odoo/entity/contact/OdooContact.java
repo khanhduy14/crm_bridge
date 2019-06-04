@@ -5,33 +5,144 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.topica.crm.bridge.core.entity.BaseObject;
 import lombok.Data;
 
+import java.util.LinkedList;
+import java.util.List;
+
 @Data
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class OdooContact extends BaseObject{
-
-
-  private String phone;
-
-  private String city;
-
-  private String street;
-
-  private String name;
-
-  private Integer externalId;
-
-  private String contactAddress;
-
-  private String emailFormatted;
-
-  private String displayName;
-
-  private String image;
-
-  private String createDate;
-
+public class OdooContact extends BaseObject {
+  private List<Object> bankIds = new LinkedList<>();
+  private String writeDate;
+  private List<Object> invoiceIds = new LinkedList<>();
+  private String messageMainAttachmentId;
+  private List<Object> propertyStockCustomer;
+  private String teamId;
+  private String activityDateDeadline;
+  private String type;
+  private List<Object> messageChannelIds = new LinkedList<>();
+  private String activityState;
+  private Integer messageHasErrorCounter;
+  private String supplier;
+  private String id;
+  private List<Object> stateId = new LinkedList<>();
+  private Integer messageBounce;
+  private Integer bankAccountCount;
+  private Integer journalItemCount;
+  private String zip;
+  private List<Object> channelIds = new LinkedList<>();
+  private Integer messageAttachmentCount;
+  private Integer subscriptionCount;
+  private Integer ticketCount;
+  private String vat;
+  private String active;
+  private String onlinePartnerBankAccount;
+  private String isBlacklisted;
+  private List<Object> createUid = new LinkedList<>();
+  private List<Object> saleOrderIds = new LinkedList<>();
+  private List<Object> propertyStockSupplier = new LinkedList<>();
+  private List<Object> propertyPaymentTermId;
   private String imageSmall;
-
+  private List<Object> userId;
+  private String phone;
+  private String additionalInfo;
+  private String companyName;
+  private List<Object> countryId;
+  private String onlinePartnerVendorName;
+  private String messageIsFollower;
+  private String imStatus;
+  private List<Object> refCompanyIds = new LinkedList<>();
+  private String city;
+  private String imageMedium;
+  private List<Object> childIds = new LinkedList<>();
+  private String lastTimeEntriesChecked;
+  private List<Object> categoryId = new LinkedList<>();
+  private List<Object> commercialPartnerId = new LinkedList<>();
+  private String street2;
+  private String signupUrl;
+  private Float debit;
+  private List<Object> propertyAccountPositionId;
   private String email;
-
+  private Integer signatureCount;
+  private String website;
+  private List<Object> companyId = new LinkedList<>();
+  private String invoiceWarnMsg;
+  private List<Object> contractIds = new LinkedList<>();
+  private List<Object> userIds = new LinkedList<>();
+  private Integer paymentTokenCount;
+  private List<Object> taskIds = new LinkedList<>();
+  private List<Object> paymentTokenIds = new LinkedList<>();
+  private List<Object> activityTypeId;
+  private String signupExpiration;
+  private Integer saleOrderCount;
+  private List<Object> self = new LinkedList<>();
+  private List<Integer> messageIds = new LinkedList<>();
+  private String isCompany;
+  private String date;
+  private String parentName;
+  private String companyType;
+  private String saleWarn;
+  private List<Integer> messagePartnerIds = new LinkedList<>();
+  private String tz;
+  private String employee;
+  private String partnerShare;
+  private String invoiceWarn;
+  private Integer taskCount;
+  private Integer meetingCount;
+  private String ref;
+  private List<Object> activityIds = new LinkedList<>();
+  private String tzOffset;
+  private String function;
+  private String commercialCompanyName;
+  private String createDate;
+  private Float credit;
+  private String barcode;
+  private List<Object> propertyProductPricelist = new LinkedList<>();
+  private Integer opportunityCount;
+  private String image;
+  private String lastUpdate;
+  private String activityUserId;
+  private List<Integer> messageFollowerIds = new LinkedList<>();
+  private String hasUnreconciledEntries;
+  private String displayName;
+  private List<Object> opportunityIds = new LinkedList<>();
+  private String pickingWarnMsg;
+  private List<Object> parentId;
+  private String name;
+  private List<Object> websiteMessageIds = new LinkedList<>();
+  private Float totalInvoiced;
+  private String trust;
+  private List<Object> industryId;
+  private List<Object> writeUid = new LinkedList<>();
+  private Integer color;
+  private Float debitLimit;
+  private String title;
+  private String messageUnread;
+  private List<Object> propertyAccountPayableId = new LinkedList<>();
+  private String street;
+  private Integer partnerGid;
+  private String calendarLastNotifAck;
+  private Float creditLimit;
+  private Integer posOrderCount;
+  private Integer contractsCount;
+  private String lang;
+  private String contactAddress;
+  private String emailFormatted;
+  private String pickingWarn;
+  private List<Object> propertyAccountReceivableId = new LinkedList<>();
+  private String mobile;
+  private List<Object> meetingIds = new LinkedList<>();
+  private String signupValid;
+  private String signupType;
+  private Integer messageUnreadCounter;
+  private String saleWarnMsg;
+  private String messageHasError;
+  private String ocnToken;
+  private String messageNeedaction;
+  private String signupToken;
+  private String activitySummary;
+  private Integer messageNeedactionCounter;
+  private String propertySupplierPaymentTermId;
+  private String comment;
+  private List<Object> currencyId = new LinkedList<>();
+  private String customer;
 }

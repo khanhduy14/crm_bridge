@@ -11,8 +11,9 @@ import static java.util.Arrays.asList;
 @Slf4j
 @Service
 public class OdooCustomerService extends OdooBaseService {
-    public List<OdooContact> getCustomer () {
-        List<Object> objects = getObject("res.partner", "search_read", asList(asList(asList("customer", "=", true))));
-        return null;
-    }
+  public List<OdooContact> getCustomer() {
+    List<Object> objects =
+        getObject("res.partner", "search_read", asList(asList(asList("customer", "=", true))));
+    return null;
+  }
 }

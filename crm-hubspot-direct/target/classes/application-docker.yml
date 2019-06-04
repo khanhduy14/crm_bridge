@@ -1,0 +1,35 @@
+application:
+  default:
+    force-use-config: ${DEFAULT_FORCE_USE_CONFIG}
+    last-modified-at: ${DEFAULT_LAST_MODIFIED_AT}
+  enable:
+    load-all-data: ${ENABLE_LOAD_ALL_DATA}
+    load-ticket: ${ENABLE_LOAD_TICKET}
+  queue:
+    contact: queue_contact
+    deal: queue_deal
+    ticket: queue_ticket
+  schedule:
+    cron:
+      contact: ${SCHEDULE_CRON_CONTACT}
+      deal: ${SCHEDULE_CRON_DEAL}
+      ticket: ${SCHEDULE_CRON_TICKET}
+
+elastic:
+  search:
+    host: ${ELASTIC_SEARCH_HOST}
+    index:
+      contact: index_contact
+      deal: index_deal
+      ticket: index_ticket
+
+hubspot:
+  ApiKey: ${HUBSPOT_API_KEY}
+  ApiBase: http://api.hubapi.com
+
+# RABBITMQ -----------------------------------------------------------------------------------------
+spring.rabbitmq:
+  ##IP
+  host: ${RABBITMQ_HOST}
+  username: ${RABBITMQ_USERNAME}
+  password: ${RABBITMQ_PASSWORD}

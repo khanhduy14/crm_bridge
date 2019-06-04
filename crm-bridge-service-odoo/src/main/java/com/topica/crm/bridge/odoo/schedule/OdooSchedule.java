@@ -5,9 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-
 public class OdooSchedule {
 
-  public void odooAutoScan() {
-  }
+  public void odooAutoScan() {}
 }

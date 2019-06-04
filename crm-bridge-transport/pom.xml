@@ -10,6 +10,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>crm-bridge-transport</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.topica.edu.vn</groupId>
+            <artifactId>crm-bridge-service-odoo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.topica.edu.vn</groupId>
+            <artifactId>crm-bridge-service-hubspot</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 
 </project>
